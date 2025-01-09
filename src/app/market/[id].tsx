@@ -62,6 +62,7 @@ export default function Market() {
 
   async function getCoupon(id: string) {
     try {
+      console.log(id);
       setCouponIsFetching(true)
 
       const { data } = await api.patch("/coupons/" + id)
@@ -134,7 +135,7 @@ export default function Market() {
             onPress={() => setIsVisibleCameraModal(false)}
             isLoading={couponIsFetching}
           >
-            <Button.Title>Voltar</Button.Title>
+            <Button.Title>Back</Button.Title>
           </Button>
         </View>
       </Modal>
