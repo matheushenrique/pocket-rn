@@ -12,6 +12,8 @@ export const s = StyleSheet.create({
     alignItems: "center",
     flexDirection: "row",
     paddingHorizontal: 12,
+    paddingTop: 12,
+    paddingBottom: 8,
     gap: 10,
   },
   name: {
