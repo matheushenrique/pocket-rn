@@ -1,6 +1,6 @@
 import { View, Alert } from "react-native";
 import { useEffect, useState } from "react";
-import MapView from "react-native-maps";
+import MapView, {Callout, Marker} from "react-native-maps";
 import * as Location from "expo-location"
 import { api } from "@/services/api";
 import { Categories, CategoriesProps } from "@/components/categories";
@@ -80,7 +80,16 @@ export default function Home() {
           latitudeDelta: 0.01,
           longitudeDelta: 0.01,
         }}
-      />
+      >
+        <Marker
+          identifier="current"
+          coordinate={{
+            latitude: currentLocation.latitude,
+            longitude: currentLocation.longitude
+          }}
+          image={require("@/assets/location.png")}
+        />
+      </MapView>
       <Places 
         data={markets}
       />
