@@ -1,6 +1,7 @@
 import { View, Alert } from "react-native";
 import { useEffect, useState } from "react";
 import MapView from "react-native-maps";
+import * as Location from "expo-location"
 import { api } from "@/services/api";
 import { Categories, CategoriesProps } from "@/components/categories";
 import { PlaceProps } from "@/components/place";
@@ -40,6 +41,17 @@ export default function Home() {
       setMarkets(data);
     } catch (error) {
       Alert.alert("Markets", "Unable to load the markets.")
+    }
+  }
+
+  async function getCurrentLocation() {
+    try {
+      const { granted } = await Location.requestForegroundPermissionsAsync()
+      if (granted) {
+        const location = await Location.getCurrentPositionAsync()
+      }
+    } catch (error) {
+      console.log(error);
     }
   }
 
