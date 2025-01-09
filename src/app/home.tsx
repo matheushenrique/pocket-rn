@@ -8,7 +8,8 @@ import { PlaceProps } from "@/components/place";
 import { Places } from "@/components/places";
 
 type MarketsProps = PlaceProps & {
-  
+  latitude: number,
+  longitude: number,
 }
 
 const currentLocation = {
@@ -89,6 +90,19 @@ export default function Home() {
           }}
           image={require("@/assets/location.png")}
         />
+        {
+          markets?.map((item) => (
+            <Marker
+              key={item.id}
+              identifier={item.id}
+              coordinate={{
+                latitude: item.latitude,
+                longitude: item.longitude,
+              }}
+              image={require("@/assets/pin.png")}
+            />
+          ))
+        }
       </MapView>
       <Places 
         data={markets}
