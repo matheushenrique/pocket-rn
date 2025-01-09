@@ -7,15 +7,14 @@ export const s = StyleSheet.create({
     maxHeight: 56,
     backgroundColor: colors.green.base,
     borderRadius: 10,
-    gap: 14,
     alignItems: "center",
     justifyContent: "center",
     flexDirection: "row",
+    gap: 14,
   },
   title: {
-    fontSize: 16,
     fontFamily: fontFamily.semiBold,
     color: colors.gray[100],
+    fontSize: 16,
   },
-
 })
