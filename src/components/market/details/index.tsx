@@ -38,7 +38,7 @@ export function Details({ data }: Props) {
       </View>
 
       <View style={s.group}>
-        <Text style={s.title}>Regulamento</Text>
+        <Text style={s.title}>Regulation</Text>
         {data.rules.map((item) => (
           <Text key={item.id} style={s.rule}>
             {`\u2022 ${item.description}`}
