@@ -32,7 +32,7 @@ export function Places({ data }: Props) {
         renderItem={({ item }) => <Place data={item} />}
         contentContainerStyle={s.content}
         ListHeaderComponent={() => (
-          <Text style={s.title}>Explore locais perto de você</Text>
+          <Text style={s.title}>Find places nearby</Text>
         )}
         showsVerticalScrollIndicator={false}
       />

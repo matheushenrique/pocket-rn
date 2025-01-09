@@ -1,5 +1,6 @@
 import { View, Alert } from "react-native";
 import { useEffect, useState } from "react";
+import MapView from "react-native-maps";
 import { api } from "@/services/api";
 import { Categories, CategoriesProps } from "@/components/categories";
 import { PlaceProps } from "@/components/place";
@@ -53,6 +54,9 @@ export default function Home() {
         data={categories} 
         onSelect={setCategory} 
         selected={category}
+      />
+      <MapView 
+        style={{ flex: 1 }}
       />
       <Places 
         data={markets}
