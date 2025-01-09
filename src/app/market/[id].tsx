@@ -35,7 +35,7 @@ export default function Market() {
       setIsLoading(false)
     } catch (error) {
       console.log(error)
-      Alert.alert("Erro", "Não foi possível carregar os dados", [
+      Alert.alert("Error", "Unable to load data.", [
         {
           text: "OK",
           onPress: () => router.back(),
@@ -66,11 +66,11 @@ export default function Market() {
 
       const { data } = await api.patch("/coupons/" + id)
 
-      Alert.alert("Cupom", data.coupon)
+      Alert.alert("Coupon", data.coupon)
       setCoupon(data.coupon)
     } catch (error) {
       console.log(error)
-      Alert.alert("Erro", "Não foi possível utilizar o cupom")
+      Alert.alert("Error", "Unable to use coupon")
     } finally {
       setCouponIsFetching(false)
     }
@@ -80,8 +80,8 @@ export default function Market() {
     setIsVisibleCameraModal(false)
 
     Alert.alert(
-      "Cupom",
-      "Não é possível reutilizar um cupom resgatado. Deseja realmente resgatar o cupom?",
+      "Coupon",
+      "Unable to reuse coupon. Do you wish to use it?",
       [
         { style: "cancel", text: "Não" },
         { text: "Sim", onPress: () => getCoupon(id) },
