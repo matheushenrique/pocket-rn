@@ -49,14 +49,14 @@ export default function Market() {
       const { granted } = await requestPermission()
 
       if (!granted) {
-        return Alert.alert("Câmera", "Você precisa habilitar o uso da câmera")
+        return Alert.alert("Camera", "You need to enable the camera access.")
       }
 
       qrLock.current = false
       setIsVisibleCameraModal(true)
     } catch (error) {
       console.log(error)
-      Alert.alert("Câmera", "Não foi possível utilizar a câmera")
+      Alert.alert("Camera", "Unable to use camera.")
     }
   }
 
